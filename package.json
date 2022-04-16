@@ -7,6 +7,7 @@
     "allupdate": "yarn upgrade-interactive"
   },
   "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
     "autoprefixer": "10.4.4",
     "nuxt3": "3.0.0-27501460.04a72f8",
     "postcss": "8.4.12",
