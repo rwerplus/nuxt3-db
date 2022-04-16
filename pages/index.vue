@@ -12,11 +12,11 @@
                 target="blank"
                 class="ml-4 font-bold text-red-600 dark:text-green-400"
                 href="https://github.com/rwerplus"
-            >Follow Me Github</a>
+            >阴阳师</a>
         </div>
         <ul role="list" class="mt-10 space-y-4">
             <li v-for="item in lists" :key="item.id">
-                <NuxtLink class="py-4 hover:shadow-xl global-text" :to="item.url">
+                <NuxtLink class="py-4 hover:shadow-xl global-text sans-appfont-en" :to="item.url">
                     <div
                         class="flex items-center justify-between p-4 space-x-3 bg-gray-300 rounded-lg dark:bg-gray-700"
                     >
