@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     '@nuxtjs/pwa',
   ],
+  typescript: {},
   pwa: {
     icon: false,
     manifest: {

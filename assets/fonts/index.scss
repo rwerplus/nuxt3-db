@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'appfont-zh';
+  font-display: swap;
    src: url('/assets/fonts/Founder-Northern.ttf');
    src: url('/assets/fonts/Founder-Northern.ttf'),
   url('/assets/fonts/Founder-Northern.ttf') format('truetype');
@@ -7,6 +8,7 @@
 
 @font-face {
   font-family: 'appfont-en';
+  font-display: swap;
    src: url('/assets/fonts/SedgwickAveDisplay-Regular.ttf');
    src: url('/assets/fonts/SedgwickAveDisplay-Regular.ttf'),
   url('/assets/fonts/SedgwickAveDisplay-Regular.ttf') format('truetype'),
