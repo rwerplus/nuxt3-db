@@ -14,6 +14,46 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     '@nuxtjs/pwa',
   ],
+  modules: [
+    ['@nuxtjs/axios',{proxyHeaders:false},],
+    [ '@nuxtjs/auth-next',]
+  ],
+  // config for nuxt/auth
+  auth: {
+    // Options
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/login',
+            method: 'post',
+            propertyName: 'data.token'
+          },
+          logout: { url: '/api/logout', method: 'get' },
+          user: {
+            url: '/api/home',
+            method: 'post',
+            propertyName: 'data'
+          }
+        }
+      }
+    },
+    redirect: {
+      login: '/ViroLogin',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
+    cookie: {
+      options: {
+        maxAge: 60 * 60 * 24 * 7
+      }
+    },
+    localStorage: false,
+  },
+  router: {
+    middleware: ['auth']
+  },
   typescript: {},
   pwa: {
     icon: false,
