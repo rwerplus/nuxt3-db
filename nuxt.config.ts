@@ -9,6 +9,10 @@ export default defineNuxtConfig({
       },
     ],
   },
+  serverMiddleware: ["~/api/auth.js", "~/api/oauth2mockserver.js"],
+  proxy: {
+    "/api": "http://localhost:3000",
+  },
   buildModules: [
     // pinia plugin - https://pinia.esm.dev
     "@pinia/nuxt",
@@ -16,40 +20,37 @@ export default defineNuxtConfig({
   ],
   modules: [
     ['@nuxtjs/axios',{proxyHeaders:false},],
-    [ '@nuxtjs/auth-next',]
+    '@nuxtjs/auth-next',
   ],
   // config for nuxt/auth
   auth: {
-    // Options
+    redirect: {
+      callback: '/callback',
+      logout: "/callback"
+    },
     strategies: {
       local: {
-        endpoints: {
-          login: {
-            url: '/api/login',
-            method: 'post',
-            propertyName: 'data.token'
-          },
-          logout: { url: '/api/logout', method: 'get' },
-          user: {
-            url: '/api/home',
-            method: 'post',
-            propertyName: 'data'
-          }
+        token: {
+          property: "token.accessToken"
         }
-      }
-    },
-    redirect: {
-      login: '/ViroLogin',
-      logout: '/',
-      callback: '/login',
-      home: '/'
-    },
-    cookie: {
-      options: {
-        maxAge: 60 * 60 * 24 * 7
-      }
-    },
-    localStorage: false,
+      },
+      localRefresh: {
+        scheme: "refresh",
+        token: {
+          property: "token.accessToken",
+          maxAge: 15
+        },
+        refreshToken: {
+          property: "token.refreshToken",
+          data: "refreshToken",
+          maxAge: false
+        }
+      },
+      auth0: {
+        domain: "nuxt-auth.auth0.com",
+        clientId: "q8lDHfBLJ-Fsziu7bf351OcYQAIe3UJv"
+      },
+    }
   },
   router: {
     middleware: ['auth']
@@ -87,7 +88,7 @@ export default defineNuxtConfig({
       workboxVersion: 3,
       enabled: true,
       workboxURL: 'https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js',
-      importScripts: ['assets/','static']
+      importScripts: ['assets/', 'static']
     }
   },
   build: {
