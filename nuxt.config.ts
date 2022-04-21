@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from "nuxt3";
+import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
   meta: {
@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       },
     ],
   },
-  serverMiddleware: ["~/api/auth.js", "~/api/oauth2mockserver.js"],
+  // serverMiddleware: ["~/api/auth.js", "~/api/oauth2mockserver.js"],
   proxy: {
     "/api": "http://localhost:3000",
   },
