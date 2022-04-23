@@ -18,43 +18,6 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     '@nuxtjs/pwa',
   ],
-  modules: [
-    ['@nuxtjs/axios',{proxyHeaders:false},],
-    '@nuxtjs/auth-next',
-  ],
-  // config for nuxt/auth
-  auth: {
-    redirect: {
-      callback: '/callback',
-      logout: "/callback"
-    },
-    strategies: {
-      local: {
-        token: {
-          property: "token.accessToken"
-        }
-      },
-      localRefresh: {
-        scheme: "refresh",
-        token: {
-          property: "token.accessToken",
-          maxAge: 15
-        },
-        refreshToken: {
-          property: "token.refreshToken",
-          data: "refreshToken",
-          maxAge: false
-        }
-      },
-      auth0: {
-        domain: "nuxt-auth.auth0.com",
-        clientId: "q8lDHfBLJ-Fsziu7bf351OcYQAIe3UJv"
-      },
-    }
-  },
-  router: {
-    middleware: ['auth']
-  },
   typescript: {},
   pwa: {
     icon: false,
