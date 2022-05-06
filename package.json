@@ -7,29 +7,27 @@
     "allupdate": "yarn upgrade-interactive"
   },
   "devDependencies": {
-    "@nuxtjs/auth-next": "^5.0.0-1648802546.c9880dc",
-    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
-    "@types/node": "^17.0.25",
-    "autoprefixer": "10.4.4",
+    "@types/node": "^17.0.31",
+    "autoprefixer": "10.4.7",
     "consola": "^2.15.3",
     "lodash-es": "^4.17.21",
-    "nanoid": "^3.3.3",
-    "nuxt": "npm:nuxt3@latest",
-    "postcss": "8.4.12",
-    "sass": "1.50.1",
+    "nanoid": "^3.3.4",
+    "nuxt": "3.0.0-rc.2",
+    "postcss": "8.4.13",
+    "sass": "1.51.0",
     "sass-loader": "12.6.0",
     "tailwindcss": "3.0.24"
   },
   "dependencies": {
-    "@headlessui/vue": "1.5.0",
+    "@headlessui/vue": "1.6.1",
     "@heroicons/vue": "1.0.6",
-    "@pinia/nuxt": "0.1.8",
+    "@pinia/nuxt": "0.1.9",
     "@tailwindcss/aspect-ratio": "0.4.0",
-    "@tailwindcss/forms": "0.5.0",
-    "@tailwindcss/line-clamp": "0.3.1",
+    "@tailwindcss/forms": "0.5.1",
+    "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
-    "pinia": "2.0.13"
+    "pinia": "2.0.14"
   },
   "engines": {
     "node": "^14.16.0 || ^16.11.0 || ^17.0.0"
