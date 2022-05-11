@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { ArrowNarrowRightIcon } from '@heroicons/vue/outline'
 
 interface links {
@@ -29,21 +29,13 @@ interface links {
   url: any
 }
 
-export default {
-  components: {
-    ArrowNarrowRightIcon
-  },
-  setup() {
-    const router = useRouter()
-    const lists = ref<links[]>([
-      { id: 1, title: 'Pinia Store', url: 'pinia' },
-      { id: 1, title: 'Modal', url: 'modal' },
-      { id: 1, title: 'Menu', url: 'menu' },
-      { id: 1, title: 'New soon...', url: '' },
-    ])
-    return {
-      lists
-    }
-  }
-}
+const router = useRouter();
+console.log(router);
+const lists = ref<links[]>([
+  { id: 1, title: 'Pinia Store', url: 'pinia' },
+  { id: 1, title: 'Modal', url: 'modal' },
+  { id: 1, title: 'Menu', url: 'menu' },
+  { id: 1, title: 'New soon...', url: '' },
+])
+const { data } = await useAsyncData('count', () => $fetch('/count'))
 </script>

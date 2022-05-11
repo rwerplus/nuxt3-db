@@ -20,9 +20,8 @@
 </template>
 
 <script>
-
 export default {
-  methods: {
+methods: {
     login () {
       const hash = this.parseQuery(this.$auth.ctx.route.hash.substr(1))
       const parsedQuery = Object.assign({}, this.$auth.ctx.route.query, hash)
@@ -38,6 +37,10 @@ export default {
       }
       return query
     }
-  }
-}
+  },
+};
+</script>
+
+<script setup>
+
 </script>
