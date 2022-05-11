@@ -18,7 +18,7 @@
   font-size: 13px;
   font-weight: 300;
 }
-
+input:-moz-focus-inner{border:0;}
 ::-moz-input-placeholder {
   color: #8a949f;
   font-size: 13px;
@@ -74,6 +74,8 @@ body {
 
 .input-effect:focus {
   outline: none;
+  outline-width:0;
+  outline: transparent;
 }
 
 .input-effect ~ .focus-border {

@@ -7,6 +7,7 @@
       <a target="blank" class="ml-4 font-bold text-red-600 dark:text-green-400"
         href="https://github.com/rwerplus">阴阳师</a>
     </div>
+    <DBInput/>
     <ul role="list" class="mt-10 space-y-4">
       <li v-for="item in lists" :key="item.id">
         <NuxtLink class="py-4 hover:shadow-xl global-text sans-appfont-en" :to="item.url">
@@ -37,5 +38,5 @@ const lists = ref<links[]>([
   { id: 1, title: 'Menu', url: 'menu' },
   { id: 1, title: 'New soon...', url: '' },
 ])
-const { data } = await useAsyncData('count', () => $fetch('/count'))
+const { data } = await useAsyncData('auth', () => $fetch('/count'))
 </script>
