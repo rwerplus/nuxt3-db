@@ -30,9 +30,9 @@ export default ({
   methods: {
     async userLogin() {
       try {
-        const response = await this.$auth.loginWith('local', {
-          data: this.login,
-        })
+        const response = await useAsyncData('/local', () =>
+          $fetch('/api/login', { params: this.login, })
+        )
         console.log(response)
 
         this.$router.push('/home')
@@ -43,3 +43,4 @@ export default ({
   },
 })
 </script>
+∏
